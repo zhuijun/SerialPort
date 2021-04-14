@@ -22,7 +22,7 @@ namespace SerialPort
         DWORD len = 0;
     };
 
-    //读取数据到的回调函数
+    //读取数据后的回调函数
     using CompletedReadCallback = std::function<void(const BYTE* data, DWORD len)>;
 
     class CSerialPort
@@ -49,7 +49,7 @@ namespace SerialPort
         *
         *  @brief 对在构造函数中设定好的COM对应的串口进行数据读取
         *  @param addr: 指定存放从串口读取数据地址
-        *  @param size：指定读取大小，单位：每4字节（4 bytes）
+        *  @param size：指定读取大小
         *  @return 正常读取时，返回true，失败则返回flase
         *  @note
         *
@@ -63,7 +63,7 @@ namespace SerialPort
         *
         *  @brief 对在构造函数中设定好的COM对应的串口进行数据写入
         *  @param addr: 指定存放将要发送给串口的数据地址
-        *  @param size：指定读取大小，单位：每4字节（4 bytes）
+        *  @param size：指定读取大小
         *  @return 正常写入时，返回true，失败则返回flase
         *  @note
         *
